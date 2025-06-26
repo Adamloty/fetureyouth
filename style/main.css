@@ -1,0 +1,1233 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ====== أنيميشن الإغلاق ====== */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* ====== تصميم المودال ====== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ====== محتوى المودال ====== */
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideIn 0.4s ease-out;
+    color: black;
+}
+
+/* ====== تأثير الإغلاق ====== */
+.modal.hide {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+.modal-content.hide {
+    animation: slideOut 0.4s ease-out forwards;
+}
+
+/* ====== رأس المودال ====== */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: black;
+}
+
+/* ====== زر الإغلاق ====== */
+.close-btn {
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+    transition: all 0.2s ease;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    color: gray;
+    background-color: #f0f0f0;
+}
+
+/* ====== حقول الإدخال ====== */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* ====== زر الإرسال ====== */
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: white;
+    color: black;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #ffffff; /* Default light mode background */
+    transition: background-color 0.3s ease; /* Add transition for smooth color change */
+}
+
+.header {
+    position: fixed; /* تم تغيير هذا لجعل الهيدر ثابتًا */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #000;
+    color: white;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-radius: 0 0 20px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    max-height: 45px;
+    width: auto;
+    border-radius: 15px;
+    padding: 3px;
+    background-color: white;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.menu-btn {
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    color: black;
+}
+
+.menu-btn:hover {
+    background-color: #ddd;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.auth-button.signup {
+    background-color: white;
+    color: #000;
+}
+
+.auth-button.signup:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.auth-button.signin {
+    background-color: #000;
+    color: white;
+    border: 1px solid white;
+}
+
+.auth-button.signin:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 60px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode-toggle:hover {
+    background-color: #000000;
+    transform: scale(1.1);
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: #000;
+    padding-top: 80px;
+    transition: 0.3s;
+    z-index: 990;
+    border-radius: 0 20px 20px 0;
+}
+
+.drawer a {
+    display: block;
+    color: white;
+    margin: 10px 20px;
+    padding: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    border-bottom: 1px solid #ffffff;
+}
+
+.drawer a:hover {
+    background-color: #000000;
+    transform: scale(1.05);
+    border-radius: 10px;
+}
+
+.drawer.active {
+    left: 0;
+    box-shadow: 0 0 15px rgba(2, 0, 0, 0.2);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 980;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
+section {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px 20px 0 0;
+}
+
+#Home {
+    min-height: auto;
+    height: calc(100vh - 120px);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.home-container {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.welcome-area {
+    text-align: center;
+    margin-bottom: -50px;
+    animation: fadeIn 1s ease-out;
+}
+
+.logo-large {
+    margin: 0 auto 20px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.logo-large img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    box-shadow: 0 0 0 4px black;
+}
+
+.logo img, .logo-large img {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.welcome-heading {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.welcome-message {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #000000;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    border: 2px solid #000;
+}
+
+.cta-button.primary {
+    background-color: #000;
+    color: white;
+}
+
+.cta-button.primary:hover {
+    background-color: white;
+    color: #000;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: #000;
+}
+
+.cta-button.secondary:hover {
+    background-color: #000;
+    color: white;
+}
+
+.features-overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.social-icon i {
+    transition: all 0.3s ease;
+}
+
+.square-icon {
+    border-radius: 5px !important;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #000;
+    background-color: transparent !important;
+    color: #000 !important;
+    transition: all 0.3s ease;
+}
+.square-icon:hover {
+    color: white !important;
+}
+.square-icon:nth-child(1):hover {
+    background-color: #3b5998 !important;
+    border-color: #3b5998 !important;
+}
+.square-icon:nth-child(2):hover {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d) !important;
+    border-color: transparent !important;
+}
+.square-icon:nth-child(3):hover {
+    background-color: #000000 !important; /* Twitter/X new color */
+    border-color: #000000 !important;
+}
+.square-icon:nth-child(4):hover {
+    background-color: #0077b5 !important;
+    border-color: #0077b5 !important;
+}
+.square-icon:nth-child(5):hover {
+    background-color: #ff0000 !important;
+    border-color: #ff0000 !important;
+}
+.square-icon:nth-child(6):hover {
+    background-color: #25d366 !important;
+    border-color: #25d366 !important;
+}
+
+
+/* Updated Drawer Social Icons - Smaller Size */
+.drawer-social-section {
+    margin-top: 15px;
+    padding: 10px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+body.dark-mode .drawer-social-section {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.drawer-social-title {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+body.dark-mode .drawer-social-title {
+    color: black;
+}
+
+.drawer-social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px; /* تم تقليل المسافة من 8px إلى 5px */
+    margin: 10px auto;
+    max-width: 200px;
+}
+
+
+.drawer-social-icons .top-row,
+.drawer-social-icons .bottom-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.drawer .drawer-social-icon {
+    width: 35px; /* تم تقليل الحجم من 40px إلى 35px */
+    height: 35px; /* تم تقليل الحجم من 40px إلى 35px */
+    border-radius: 5px !important;
+    border: 2px solid white;
+    background-color: transparent !important;
+    color: white !important;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px; /* تم تقليل الحجم من 18px إلى 16px */
+}
+
+body.dark-mode .drawer .drawer-social-icon {
+    border-color: black !important;
+    color: black !important;
+}
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #000000;
+    color: #e0e0e0;
+}
+
+body.dark-mode .header {
+    background-color: white !important;
+    color: #000 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .footer {
+    background-color: white !important;
+    color: #000 !important;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .menu-btn {
+    background-color: #000 !important;
+    color: white !important;
+}
+
+body.dark-mode .menu-btn:hover {
+    background-color: #333 !important;
+}
+
+body.dark-mode .drawer {
+    background-color: white !important;
+}
+
+body.dark-mode .drawer a {
+    color: #000 !important;
+    border-bottom-color: #000000 !important;
+}
+
+body.dark-mode .drawer a:hover {
+    background-color: #f5f5f5 !important;
+}
+
+body.dark-mode #Home {
+    background-color: #000000;
+}
+
+body.dark-mode .welcome-heading,
+body.dark-mode .highlight,
+body.dark-mode .feature-card h3 {
+    color: #ffffff;
+}
+
+body.dark-mode .welcome-message {
+    color: #b0b0b0;
+}
+
+body.dark-mode .feature-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .feature-card p {
+    color: #b0b0b0;
+}
+
+body.dark-mode .cta-button.secondary {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.dark-mode .cta-button.secondary:hover {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+body.dark-mode .auth-button.signup {
+    background-color: #000 !important;
+    color: white !important;
+}
+
+body.dark-mode .auth-button.signup:hover {
+    background-color: #333 !important;
+    color: white !important;
+}
+
+body.dark-mode .auth-button.signin {
+    background-color: white !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+}
+
+body.dark-mode .auth-button.signin:hover {
+    background-color: #f0f0f0 !important;
+    color: #000 !important;
+}
+
+body.dark-mode .dark-mode-toggle {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+    color: #000 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+body.dark-mode .dark-mode-toggle:hover {
+    background-color: #fff !important;
+}
+
+body.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .modal-header h2,
+body.dark-mode .close-btn,
+body.dark-mode .form-group label {
+    color: #e0e0e0;
+}
+
+body.dark-mode .form-group input {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .submit-btn {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.dark-mode .submit-btn:hover {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0,0,0,0.4);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0,0,0,0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    }
+}
+
+@keyframes darkModeToggleClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.dark-mode-toggle.animate {
+    animation: darkModePulse 1.2s ease-in-out;
+}
+
+.dark-mode-toggle.clicked {
+    animation: darkModeToggleClick 0.5s ease;
+}
+
+@keyframes darkModePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+#headerLogo, .auth-buttons, .logo-large, .welcome-heading, .social-icons, .footer {
+    opacity: 0;
+}
+
+@media (max-width: 768px) {
+    .welcome-heading {
+        font-size: 2rem;
+    }
+
+    .welcome-message {
+        font-size: 1rem;
+    }
+
+    .features-overview {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+
+    .auth-buttons {
+        gap: 5px;
+    }
+
+    .auth-button {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .dark-mode-toggle {
+        position: fixed;
+        bottom: 60px;
+        left: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 985;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    /* Smaller drawer icons on mobile */
+    .drawer-social-icons {
+        gap: 5px;
+        max-width: 200px;
+    }
+
+    .drawer .drawer-social-icon {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* أنماط العناوين الفرعية مع خط تحتها */
+.sub-title {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.sub-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background-color: #000000; /* لون الخط أسود في وضع النهار */
+    transition: background-color 0.3s ease;
+}
+
+body.dark-mode .sub-title::after {
+    background-color: #ffffff; /* لون الخط أبيض في وضع الظلام */
+}
+
+/* إضافة مسافة بين العناصر */
+.about-content {
+    margin-bottom: 60px; /* زيادة المسافة بين العناصر */
+}
+
+/* تنسيق العنوان الرئيسي */
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #000, #444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode .main-title {
+    background: linear-gradient(45deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* تنسيق حاويات المحتوى */
+.content-box {
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.5s ease;
+    border-left: 5px solid #000;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .content-box {
+    background-color: #1a1a1a;
+    border-left: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.05);
+}
+
+/* تنسيق الصفحة بشكل عام */
+#about-us {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* أنيميشن للعناصر */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-element {
+    animation: fadeInUp 1s ease forwards;
+}
+
+/* Contact Section Styles */
+#contact-us {
+    padding: 80px 20px;
+    background-color: #ffffff; /* Default background for contact section itself */
+    transition: background-color 0.3s ease;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #000;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-box {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    background-color: black; /* خلفية سوداء في الوضع الفاتح */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    color: white; /* لون النص أبيض في الوضع الفاتح */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* حد سفلي خفيف على الخلفية السوداء */
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #87CEEB; /* لون أزرق فاتح للبريد الإلكتروني */
+    text-decoration: none;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white; /* لون الليبل أبيض في الوضع الفاتح */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid white; /* حدود بيضاء في الوضع الفاتح */
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: black; /* خلفية سوداء للإدخالات في الوضع الفاتح */
+    color: white; /* لون النص أبيض في الإدخالات */
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: white; /* خلفية بيضاء للزر في الوضع الفاتح */
+    color: black; /* نص أسود للزر في الوضع الفاتح */
+    border: 1px solid black; /* حدود سوداء للزر في الوضع الفاتح */
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #eee; /* لون أفتح عند التحويم */
+    color: black;
+    border-color: #333;
+}
+
+/* WhatsApp Box Styles */
+.whatsapp-box {
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    background-color: black; /* خلفية سوداء في الوضع الفاتح */
+    border: 2px solid black; /* حدود سوداء في الوضع الفاتح */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 15px;
+    color: white; /* نص أبيض في الوضع الفاتح */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+
+  .whatsapp-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .whatsapp-icon {
+    font-size: 2rem;
+    margin-bottom: 0;
+    color: white; /* أيقونة بيضاء في الوضع الفاتح */
+  }
+
+  .whatsapp-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .whatsapp-box p {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .whatsapp-btn {
+    display: inline-block;
+    background-color: white; /* زر أبيض في الوضع الفاتح */
+    color: black; /* نص أسود للزر في الوضع الفاتح */
+    padding: 8px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 0;
+    transition: all 0.3s;
+    border: 2px solid black; /* حدود سوداء للزر في الوضع الفاتح */
+    font-size: 0.8rem;
+  }
+
+  .whatsapp-btn:hover {
+    background-color: transparent;
+    color: white; /* نص أبيض عند التحويم في الوضع الفاتح */
+    border-color: white; /* حدود بيضاء عند التحويم في الوضع الفاتح */
+  }
+
+/* Dark Mode Styles */
+body.dark-mode #contact-us {
+    background-color: #000000; /* خلفية القسم نفسه سوداء في الوضع الداكن */
+    color: #f0f0f0; /* لون النص في القسم */
+}
+
+body.dark-mode .section-title::after {
+    background-color: #fff;
+}
+
+body.dark-mode .contact-box {
+    background-color: white; /* خلفية بيضاء في الوضع الداكن */
+    color: black; /* لون النص أسود في الوضع الداكن */
+    box-shadow: 0 5px 15px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .contact-info {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); /* حد سفلي خفيف على الخلفية البيضاء */
+}
+
+body.dark-mode .contact-info a {
+    color: #0066cc; /* لون أزرق قياسي للبريد الإلكتروني */
+}
+
+body.dark-mode .contact-form label {
+    color: black; /* لون الليبل أسود في الوضع الداكن */
+}
+
+body.dark-mode .contact-form input,
+body.dark-mode .contact-form textarea {
+    background-color: white; /* خلفية بيضاء للإدخالات في الوضع الداكن */
+    border-color: black; /* حدود سوداء للإدخالات في الوضع الداكن */
+    color: black; /* لون النص أسود في الإدخالات */
+}
+
+body.dark-mode .submit-btn {
+    background-color: black; /* خلفية سوداء للزر في الوضع الداكن */
+    color: white; /* نص أبيض للزر في الوضع الداكن */
+    border: 1px solid black; /* حدود سوداء للزر في الوضع الداكن */
+}
+
+body.dark-mode .submit-btn:hover {
+    background-color: #333; /* لون أغمق عند التحويم */
+    color: white;
+    border-color: #333;
+}
+
+body.dark-mode .whatsapp-box {
+  background-color: white; /* خلفية بيضاء في الوضع الداكن */
+  border-color: white; /* حدود بيضاء في الوضع الداكن */
+  color: black; /* نص أسود في الوضع الداكن */
+}
+
+body.dark-mode .whatsapp-icon {
+  color: black; /* أيقونة سوداء في الوضع الداكن */
+}
+
+body.dark-mode .whatsapp-btn {
+  background-color: black; /* زر أسود في الوضع الداكن */
+  color: white; /* نص أبيض للزر في الوضع الداكن */
+  border-color: black; /* حدود سوداء للزر في الوضع الداكن */
+}
+
+body.dark-mode .whatsapp-btn:hover {
+  background-color: transparent;
+  color: black; /* نص أسود عند التحويم في الوضع الداكن */
+  border-color: black; /* حدود سوداء عند التحويم في الوضع الداكن */
+}
+
+/* تنسيقات لصور الشركاء */
+.partner-images {
+    display: flex; /* لعرض الصور جنبًا إلى جنب افتراضيًا (على الشاشات الكبيرة) */
+    justify-content: center; /* لتوسيط الصور أفقياً */
+    align-items: center; /* لتوسيط الصور رأسياً */
+    gap: 30px; /* المسافة بين الصور */
+    margin-top: 30px; /* مسافة من أعلى العنوان */
+    flex-wrap: wrap; /* للسماح للصور بالنزول لسطر جديد إذا لم تتسع */
+    padding: 20px; /* إضافة مسافة داخلية حول الصور نفسها */
+    width: 100%; /* ضمان أنها تأخذ العرض الكامل للمحاذاة */
+}
+.partner-logo {
+    width: 150px; /* تم تصغير العرض إلى 150 بكسل */
+    height: 150px; /* تم تصغير الارتفاع إلى 150 بكسل */
+    object-fit: cover; /* لقص الصور إذا كانت أبعادها لا تتناسب مع المساحة المحددة */
+    transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+    transform: translateY(-5px); /* تأثير رفع عند التحويم */
+    /* يمكنك إضافة ظل خفيف هنا إذا أردت تأثير عند التحويم */
+    /* box-shadow: 0 6px 12px rgba(0,0,0,0.15); */
+}
+
+
+body.dark-mode .social-icon.square-icon {
+    border-color: #ffffff;
+    color: #ffffff !important;
+    background-color: #000000 !important;
+}
+
+body.dark-mode .partner-logo:hover {
+    /* box-shadow: 0 6px 12px rgba(255,255,255,0.1); */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-box,
+    .whatsapp-box {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* هذا الجزء يجعل صور الشركاء تظهر كعمود على الشاشات الصغيرة */
+    .partner-images {
+        flex-direction:row; /* جعلها عمود على الشاشات الصغيرة */
+        gap: 20px; /* ضبط المسافة بين العناصر في العمود */
+    }
+
+    .partner-logo {
+        width: 120px; /* تم تعديل العرض ليكون مناسبًا للجوال ويحافظ على الشكل المربع */
+        height: 120px; /* تم تعديل الارتفاع ليكون مناسبًا للجوال ويحافظ على الشكل المربع */
+        margin: 0 auto; /* توسيط كل صورة في العمود */
+    }
+}
